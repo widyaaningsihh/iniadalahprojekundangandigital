@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="/style/event.css">
+</head>
+<body>
+
+    <div class="invitation-container">
+        <div class="header">
+            <h1>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
+            <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara syukuran pernikahan kami.</p>
+        </div>
+
+        <div class="date-section">
+            <div class="date-card">
+                <h2>Minggu</h2>
+                <h3>10</h3>
+                <p>Oktober 2024</p>
+            </div>
+        </div>
+
+        <div class="details-container">
+            <div class="event akad">
+                <h3>Akad Nikah</h3>
+                <p>07.00 - Selesai</p>
+                <p>Masjid Al-Hidayah</p>
+                <a href="#">Lihat Lokasi</a>
+            </div>
+
+            <div class="heart">
+                <img src="/assets/heart.svg" alt="Heart Icon">
+            </div>
+
+            <div class="event resepsi">
+                <h3>Resepsi</h3>
+                <p>10.00 - Selesai</p>
+                <p>Tokyo, Disneyland</p>
+                <a href="#">Lihat Lokasi</a>
+            </div>
+        </div>
+
+    <div class="countdown-container">
+        <h1>Menuju Hari Pernikahan Kami</h1>
+        <div id="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Hari</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Jam</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Menit</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Detik</p>
+            </div>
+        </div>
+        </div>
+    
+
+    <div class="menu-bar">
+        <a href="/page/index.html" class="menu-item">
+            <img src="/assets/opening.svg" alt="Home Icon"> 
+            Opening
+        </a>
+        <a href="/page/mempelai.html" class="menu-item">
+            <img src="/assets/mempelai.svg" alt="Heart Icon"> 
+            Mempelai
+        </a>
+        <a href="/page/event.html" class="menu-item">
+            <img src="/assets/event.svg" alt="Event Icon"> 
+            Event
+        </a>
+        <a href="/page/wish.html" class="menu-item">
+            <img src="/assets/wish.svg" alt="Wish Icon">
+            Wish
+        </a>
+        <a href="/page/gallery.html" class="menu-item">
+            <img src="/assets/gallery.svg" alt="Gallery Icon"> 
+            Gallery
+        </a>
+    </div>
+</div>
+
+<audio id="audioPlayer" autoplay loop>
+    <source src="/assets/audio.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const audio = document.getElementById('audioPlayer');
+
+    audio.addEventListener('timeupdate', function() {
+        localStorage.setItem('audioCurrentTime', audio.currentTime);
+    });
+
+    window.addEventListener('load', function() {
+        const savedTime = localStorage.getItem('audioCurrentTime');
+        if (savedTime) {
+            audio.currentTime = savedTime;
+        }
+        audio.play();
+    });
+</script>
+
+</div>
+<script>
+
+const weddingDate = new Date("October 10, 2024 00:00:00").getTime();
+
+const countdownFunction = setInterval(function() {
+
+    const now = new Date().getTime();
+    
+    const distance = weddingDate - now;
+    
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+    
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "The Big Day is Here!";
+    }
+}, 1000);
+
+</script>
+
+</body>
+</html>
+
+    
+</body>
+</html>
