@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP & Wedding Wish</title>
+    <link rel="stylesheet" href="/style/wish.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="rsvp-section">
+            <h2>RSVP</h2>
+            <p>Mohon konfirmasi kehadiran Anda melalui formulir di bawah ini:</p>
+            <form id="rsvp-form">
+                <input type="text" id="name" placeholder="Nama Anda" required>
+                <input type="email" id="email" placeholder="Email Anda" required>
+                <select id="attendance">
+                    <option value="yes">Hadir</option>
+                    <option value="no">Tidak Hadir</option>
+                </select>
+                <textarea id="message" placeholder="Pesan atau Pertanyaan"></textarea>
+                <button type="submit">Kirim RSVP</button>
+            </form>
+        </div>
+
+        <div class="wedding-wish-section">
+            <h2>Wedding Wishes</h2>
+            <p>Tinggalkan pesan ucapan untuk kami:</p>
+            <form id="wish-form">
+                <input type="text" id="wish-name" placeholder="Nama Anda" required>
+                <textarea id="wish-message" placeholder="Ucapan Anda" required></textarea>
+                <button type="submit">Kirim Ucapan</button>
+            </form>
+            <div id="wish-container">
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <a href="/page/index.html" class="menu-item">
+                <img src="/assets/opening.svg" alt="Home Icon"> 
+                Opening
+            </a>
+            <a href="/page/mempelai.html" class="menu-item">
+                <img src="/assets/mempelai.svg" alt="Heart Icon"> 
+                Mempelai
+            </a>
+            <a href="/page/event.html" class="menu-item">
+                <img src="/assets/event.svg" alt="Event Icon"> 
+                Event
+            </a>
+            <a href="/page/wish.html" class="menu-item">
+                <img src="/assets/wish.svg" alt="Wish Icon">
+                Wish
+            </a>
+            <a href="/page/gallery.html" class="menu-item">
+                <img src="/assets/gallery.svg" alt="Gallery Icon"> 
+                Gallery
+            </a>
+        </div>
+
+    </div>
+
+    <audio id="audioPlayer" autoplay loop>
+        <source src="/assets/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+
+        audio.addEventListener('timeupdate', function() {
+            localStorage.setItem('audioCurrentTime', audio.currentTime);
+        });
+
+        window.addEventListener('load', function() {
+            const savedTime = localStorage.getItem('audioCurrentTime');
+            if (savedTime) {
+                audio.currentTime = savedTime;
+            }
+            audio.play();
+        });
+    </script>
+
+<script>
+   
+document.getElementById("rsvp-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const attendance = document.getElementById("attendance").value;
+    const message = document.getElementById("message").value;
+
+    alert(`Terima kasih, ${name}! RSVP Anda telah kami terima.\nStatus Kehadiran: ${attendance === 'yes' ? 'Hadir' : 'Tidak Hadir'}`);
+    
+    document.getElementById("rsvp-form").reset();
+});
+
+document.getElementById("wish-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const wishName = document.getElementById("wish-name").value;
+    const wishMessage = document.getElementById("wish-message").value;
+
+    const wishContainer = document.getElementById("wish-container");
+    const wishDiv = document.createElement("div");
+    wishDiv.classList.add("wish");
+
+    const nameDiv = document.createElement("div");
+    nameDiv.classList.add("wish-name");
+    nameDiv.textContent = wishName;
+
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("wish-message");
+    messageDiv.textContent = wishMessage;
+
+    wishDiv.appendChild(nameDiv);
+    wishDiv.appendChild(messageDiv);
+    wishContainer.appendChild(wishDiv);
+
+    document.getElementById("wish-form").reset();
+});
+
+</script>
+
+
+
+    
+</body>
+</html>
