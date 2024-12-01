@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Thank You</title>
+    <link rel="stylesheet" href="/style/penutupan.css">
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-message">
+            <h2>Thank You</h2>
+            <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.</p>
+            <h1>Mingyu & Widya</h1>
+            <p class="contact">ig : wdyyyy._<br>085754710503</p>
+            <button onclick="window.location.href='/page/index.html'">Return</button>
+        </div>
+
+        <audio id="audioPlayer" autoplay loop>
+            <source src="/assets/audio.mp3" type="audio/mpeg">
+        </audio>
+    
+        <script>
+            const audio = document.getElementById('audioPlayer');
+    
+            audio.addEventListener('timeupdate', function() {
+                localStorage.setItem('audioCurrentTime', audio.currentTime);
+            });
+    
+            window.addEventListener('load', function() {
+                const savedTime = localStorage.getItem('audioCurrentTime');
+                if (savedTime) {
+                    audio.currentTime = savedTime;
+                }
+                audio.play();
+            });
+        </script>
+        
+    </div>
+</body>
+</html>
