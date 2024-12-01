@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=414, height=736, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="/style/mempelai.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h2>M & W</h2>
+        </div>
+
+        <div class="wide-text">
+            <h1>وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ ۝٢١</h1>
+            <p>Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+        </div>
+        
+        <img src="/assets/linemempelai.svg" alt="linelove" class="garis">
+
+        <div class="info-pasangan">
+            <div class="pasangan kiri">
+                <img src="/assets/mingyuu.jpeg" alt="Foto Mingyu" class="poto1">
+                <h3>MINGYU</h3>
+                <p>Bin Angga Saputra<br>&<br>Ibu Diana</p>
+                
+            </div>
+
+            
+
+            <div class="pasangan kanan">
+                <img src="/assets/widyaa.jpeg" alt="Foto Widya">
+                <h3>WIDYA</h3>
+                <p>Bin Hj Isam<br>&<br>Ibu Sari Purnama</p>
+                
+            </div>
+        </div>
+    
+    <div class="menu-bar">
+        <a href="/page/index.html" class="menu-item">
+            <img src="/assets/opening.svg" alt="Home Icon"> 
+            Opening
+        </a>
+        <a href="/page/mempelai.html" class="menu-item">
+            <img src="/assets/mempelai.svg" alt="Heart Icon"> 
+            Mempelai
+        </a>
+        <a href="/page/event.html" class="menu-item">
+            <img src="/assets/event.svg" alt="Event Icon"> 
+            Event
+        </a>
+        <a href="/page/wish.html" class="menu-item">
+            <img src="/assets/wish.svg" alt="Wish Icon">
+            Wish
+        </a>
+        <a href="/page/gallery.html" class="menu-item">
+            <img src="/assets/gallery.svg" alt="Gallery Icon"> 
+            Gallery
+        </a>
+    </div>
+
+    
+    
+    <audio id="audioPlayer" autoplay loop>
+        <source src="/assets/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+
+        audio.addEventListener('timeupdate', function() {
+            localStorage.setItem('audioCurrentTime', audio.currentTime);
+        });
+
+        window.addEventListener('load', function() {
+            const savedTime = localStorage.getItem('audioCurrentTime');
+            if (savedTime) {
+                audio.currentTime = savedTime;
+            }
+            audio.play();
+        });
+    </script>
+
+</div>
+</body>
+</html>
