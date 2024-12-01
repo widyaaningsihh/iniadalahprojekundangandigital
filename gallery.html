@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polaroid Video Layout</title>
+    <link rel="stylesheet" href="/style/gallery.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="polaroid-container">
+            <div class="polaroid polaroid3">
+                <video controls>
+                    <source src="/assets/video.MOV" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    <div class="gallery-container">
+        <div class="poto-polaroid">
+            <img src="/assets/galeri-mereng1.jpg" alt="Wedding Photo 1">
+        </div>
+        <div class="poto-polaroid">
+            <img src="/assets/galeri-mereng2.jpg" alt="Wedding Photo 2">
+        </div>
+        <div class="poto-polaroid">
+            <img src="/assets/galeri-mereng4.jpg" alt="Wedding Photo 2">
+        </div>
+
+        <div class="button-container">
+            <a href="/page/penutupan.html" class="custom-button">Click Here!</a>
+        </div>
+    </div>
+
+        <div class="menu-bar">
+            <a href="/page/index.html" class="menu-item">
+                <img src="/assets/opening.svg" alt="Home Icon"> 
+                Opening
+            </a>
+            <a href="/page/mempelai.html" class="menu-item">
+                <img src="/assets/mempelai.svg" alt="Heart Icon"> 
+                Mempelai
+            </a>
+            <a href="/page/event.html" class="menu-item">
+                <img src="/assets/event.svg" alt="Event Icon"> 
+                Event
+            </a>
+            <a href="/page/wish.html" class="menu-item">
+                <img src="/assets/wish.svg" alt="Wish Icon">
+                Wish
+            </a>
+            <a href="/page/gallery.html" class="menu-item">
+                <img src="/assets/gallery.svg" alt="Gallery Icon"> 
+                Gallery
+            </a>
+        </div>
+
+        <audio id="audioPlayer" autoplay loop>
+            <source src="/assets/audio.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+    
+        <script>
+            const audio = document.getElementById('audioPlayer');
+    
+            audio.addEventListener('timeupdate', function() {
+                localStorage.setItem('audioCurrentTime', audio.currentTime);
+            });
+    
+            window.addEventListener('load', function() {
+                const savedTime = localStorage.getItem('audioCurrentTime');
+                if (savedTime) {
+                    audio.currentTime = savedTime;
+                }
+                audio.play();
+            });
+        </script>
+
+    </div>
+</body>
+</html>
