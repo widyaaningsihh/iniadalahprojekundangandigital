@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 414px;
+    height: 1080px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url('/assets/background2.png');
+    background-size: cover;
+}
+
+.bingkai-home {
+    align-items: center;
+    justify-content: center;
+    margin-top: 230px;
+    animation: fadeInZoom 2.5s ease-in-out;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.linehome {
+    align-items: center;
+    justify-content: center;
+    margin-top: -500px;
+    animation: fadeInZoom 2.5s ease-in-out;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.header {
+    color: #792d2d;
+    text-decoration: underline;
+    margin-top: 40px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Cursive';
+    animation: slideDown 2.5s ease;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.header p {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.image-container {
+    margin-top: 20px;
+}
+
+.image-container h1 {
+    font-size: 25px;
+    color: #792d2d;
+    text-shadow: #f0f0f0;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation: slideLeftToRight 2.5s ease;
+}
+
+@keyframes slideLeftToRight {
+    0% {
+        transform: translateX(-30%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.image-container p {
+    font-size: 18px;
+    color: #792d2d;
+    text-shadow: #f0f0f0;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation: slideRightToLeft 2.5s ease;
+}
+
+@keyframes slideRightToLeft {
+    0% {
+        transform: translateX(30%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.foto-pasangan {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 4px double #521717;
+    box-shadow: 5px 5px 10px #521717;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    animation: fadeInZoom 1.9s ease-in-out;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.foto-pasangan:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); 
+    transform: translateY(-10px);
+}
+
+.detail {
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 10px #521717;
+    margin-top: 100px;
+    animation: fadeInZoom 2.5s ease-in-out;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.detail:hover {
+    box-shadow: 5px 5px 10px #9c3f3f;
+}
+
+.detail p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #5f2121;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.open-button {
+    background-color: #A33F3F;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background: linear-gradient(to right,#521717 , #A33F3F );
+    border: 2px solid #3a0b0b;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: inherit;
+    margin-bottom: 20px;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    animation: slideUp 2.5s ease;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.open-button:hover {
+    background: linear-gradient(to right,#A33F3F , #521717);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: inherit;
+    transform: scale(0.9);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px); 
+    border: 2px solid #5f2121;
+}
+
+.left {
+    flex: 2;
+    background-color: #f4f4f4;
+}
+
+.large-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right {
+    flex: 1;
+    background-color: #8c2b2f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.btn-undangan {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-undangan:hover {
+    background-color: #444;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        height: auto; 
+    }
+
+    .container {
+        width: 80%; 
+        max-width: 1200px;
+        height: auto;
+        margin-top: 50px;
+        padding: 30px; 
+        background-color: white; 
+    }
+    
+    .header h1{
+        font-size: 35px;
+        margin-top: -200px;
+        margin-left: -355px;
+    }
+
+    .foto-pasangan {
+        margin-left: 100vh;
+        width: 300px;  
+        height: 350px;
+        margin-top: -290px;
+    }
+
+    .bingkai-home {
+        margin-left: 640vh;
+    }
+
+    .linehome {
+        margin-left: 640vh;
+    }
+
+    .image-container h1 {
+        font-size: 35px; 
+        margin-left: 630px;
+        margin-top: 20px;
+    }
+
+    .image-container p {
+        font-size: 28px;
+        margin-left: 630px;
+        margin-top: 10px;
+        line-height: 0.9;
+    }
+
+    .detail {
+        width: 50%;
+        margin-left: 60px;
+        margin-bottom: 200px;
+        margin-top: -10px;
+    }
+
+    .open-button {
+       margin-bottom: 130px;
+       margin-left: -385px;
+    }
+
+    .menu-bar {
+        margin-top: 50px; 
+    }
+
+    .menu-item {
+        font-size: 18px;
+    }
+
+    .menu-item img {
+        width: 30px; 
+        height: 30px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
